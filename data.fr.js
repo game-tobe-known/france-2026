@@ -1,0 +1,252 @@
+// Texte français pour data.js (même ordre que data.js). Les citations recueillies en français sont reprises telles quelles.
+window.RUMEUR_I18N = window.RUMEUR_I18N || {};
+window.RUMEUR_I18N.fr = {
+  timeline: [
+    ['Matin', 'Paris 15e', 'Une centaine de personnes cagoulées bloquent le parking de CNews et d\'Europe 1. 21 interpellations.'],
+    ['12 h 20', 'Paris', 'L\'Orchestre du Nouveau Monde est gazé pendant sa répétition place de la République, avant le départ du cortège.'],
+    ['12 h 30', 'Lille', 'Selon le préfet, près de 2 000 « éléments violents » affrontent les forces de l\'ordre.'],
+    ['14 h', 'Lyon', 'Plusieurs milliers de personnes place Bellecour, sans autorisation.'],
+    ['14 h 30', 'Lille', 'Départ du cortège : 24 000 personnes selon la préfecture.'],
+    ['vers 15 h', 'Lyon', 'L\'office de tourisme de la place Bellecour est incendié ; les pompiers arrivent peu après 15 h.'],
+    ['Après-midi', 'Bordeaux', 'Intrusion dans la résidence préfectorale. Le RAID est déclenché.'],
+    ['19 h 41', 'Paris 10e', 'Intrusion à la mairie, où une centaine de personnes assistent à un événement Octobre rose.'],
+    ['19 h 59', 'France', 'Le ministre de l\'Intérieur annonce environ 400 interpellations.'],
+    ['21 h', 'Paris 8e', 'Une voiture retournée rue Cambacérès, à 400 m de l\'Élysée.'],
+    ['21 h 44', 'Limoges', 'Incendie de l\'hôtel de ville, vieux de 143 ans. Selon le préfet, la majeure partie du bâtiment est perdue.'],
+    ['22 h 54', 'Saint-Étienne', 'Un manifestant de 17 ans perd une main, a priori à cause d\'une grenade. L\'IGPN est saisie.'],
+    ['23 h 22', 'Paris 8e', 'Des touristes pris dans les gaz et les jets de pierres place de la Madeleine.'],
+    ['23 h 48', 'Premier ministre', 'Sébastien Lecornu annonce 1 200 interpellations et 150 policiers blessés.'],
+  ],
+  objects: {
+    marianne: { name: 'Marianne en gilet jaune',
+      facts: [
+        'Au centre de la place de la République, la statue de Marianne personnifie la République. Ce jour-là, elle porte un gilet jaune, et des traînées noires marquent le visage des figures allégoriques du socle.',
+        'Le gilet jaune est devenu un symbole en 2018, avec le mouvement contre le prix du gazole. D\'anciens gilets jaunes ont rejoint la mobilisation à cause de la flambée des prix.',
+        'À Marseille, des personnes entrées dans l\'hôtel de ville ont jeté au sol un buste de Marianne.',
+      ],
+      voices: [
+        ['Ancien professeur d\'histoire, 71 ans, habite le 11e', 'On s\'est rassemblés devant cette statue en 1989, et après les attentats de 2015. Elle n\'appartient à personne, donc à tout le monde. C\'est pour ça que chacun veut l\'habiller de ses couleurs.'],
+        ['Agent de sécurité, 44 ans, vient de banlieue', 'Je comprends pourquoi on lui a mis ce gilet. Mais demain matin, effacer ces traces noires, ce sera le travail de quelqu\'un.'],
+      ],
+      q: 'Qu\'est-ce qui symbolise « le pays » pour vous ? Quand quelqu\'un le repeint, vous ressentez de la colère ou de la sympathie ?' },
+    cortege: { name: 'Le cortège',
+      facts: [
+        'Participation : 550 000 en France (110 000 à Paris) selon le ministère de l\'Intérieur ; 800 000 selon les organisateurs et la CGT.',
+        'Le mouvement lycéen et étudiant, parti le 21 septembre de Créteil, a été rejoint par des syndicats, d\'anciens gilets jaunes, des syndicats agricoles, des infirmiers et des pompiers.',
+        'Principales revendications : contre la vie chère, pour les services publics et de meilleures conditions d\'études. Certains réclamaient aussi la démission d\'Emmanuel Macron et du gouvernement.',
+      ],
+      voices: [
+        ['Lola, 19 ans, Paris', 'Le prix de l\'essence est trop élevé.'],
+        ['Amélie, mère de trois enfants (avec sa fille adolescente)', 'Nous maintiendrons la pression jusqu\'à ce que quelqu\'un prenne en charge l\'avenir de nos enfants.'],
+        ['Lycéenne (anonyme)', 'Nous sommes là parce que nous voulons reprendre nos droits.'],
+        ['Lorie, 42 ans, vendeuse, deux enfants (sa pancarte)', 'Et là, Macron, tu la vois mieux ma colère ?'],
+        ['Clémence, 27 ans, employée RH à Caen (sa pancarte)', 'Moins de cabinets de conseil, plus de cabinets médicaux.'],
+      ],
+      q: '550 000 et 800 000. Une même scène, deux chiffres. Lequel avez-vous cru en premier, et pourquoi ?' },
+    banner: { name: 'La banderole lycéenne',
+      facts: [
+        'Les lycéens dénoncent des classes de 32 à 36 élèves, le manque de professeurs et des bâtiments délabrés. Pendant les canicules de 2026, des salles de classe auraient atteint 40 °C.',
+        'Le stress lié à Parcoursup est un autre grief majeur.',
+        'Une banderole rapportée par la presse : « Désolés pour le dérangement, on veut juste un avenir ».',
+        'Dans le cortège parisien : « Des moyens pour nos gamins », « Fier de nos enfants ». Une infirmière a écrit « Hôpitaux publics à l\'agonie, la France en soins palliatifs ».',
+      ],
+      voices: [
+        ['Professeur de maths, 38 ans, Créteil', 'Avec 36 élèves, il me faut jusqu\'en novembre pour retenir leurs prénoms. D\'ici là, certains ne viennent déjà plus.'],
+        ['Élève de première, 16 ans, Saint-Denis', 'Mes parents me disent de travailler. Mais où ? Quand il pleut, l\'eau coule dans la classe.'],
+      ],
+      q: 'Combien étiez-vous dans votre classe ? Qu\'y avez-vous reçu, et qu\'est-ce qui vous a manqué ?' },
+    kiosque: { name: 'Le kiosque en feu',
+      facts: [
+        'Place de la République, des manifestants ont incendié une voiture et un kiosque à journaux ; une épaisse fumée noire est montée dans le ciel. Cafés et boutiques ont fermé pour la journée.',
+        'Des journalistes de l\'AP ont vu un kiosque brûler et plusieurs commerces pillés.',
+        'Les personnes qui allument les feux dans cette œuvre sont des silhouettes composites sans visage, qui ne représentent aucune personne ni aucun groupe réels.',
+        'Le maire de Paris a parlé de rues entières dévastées. Selon des sources policières, un couple âgé a été dépouillé dans le centre.',
+      ],
+      voices: [
+        ['Kiosquier, 58 ans', 'Je ne sais pas qui l\'a brûlé, ni pourquoi. Mais ce kiosque, c\'est ma retraite. Je ne sais même pas contre qui être en colère.'],
+        ['Cliente fidèle, 29 ans, infirmière', 'J\'achetais mon journal ici tous les matins. Aujourd\'hui j\'ai défilé à midi, et ce soir je soignerai les blessés à l\'hôpital.'],
+      ],
+      q: 'Quand le gagne-pain de quelqu\'un est détruit au nom d\'une cause, peut-on dire que cette perte était « inévitable » ? Et qui en décide ?' },
+    voiture: { name: 'La voiture incendiée',
+      facts: [
+        'Poubelles en feu, voitures et barricades de fortune : des images récurrentes de ce mouvement.',
+        'Des camions de pompiers ont été brûlés, des bus et des tramways endommagés.',
+      ],
+      voices: [
+        ['Propriétaire de la voiture, 33 ans, livreur', 'L\'expert de l\'assurance passe le mois prochain. D\'ici là, je n\'ai rien pour aller travailler. Et pourtant je suis d\'accord avec leurs revendications.'],
+      ],
+      q: 'Si c\'était votre voiture, que diriez-vous le lendemain matin, et à qui ?' },
+    cagoules: { name: 'Le groupe cagoulé',
+      facts: [
+        'Les visages sont cachés. Ni l\'identité ni les motivations ne se lisent sur l\'apparence.',
+        'Des centaines de personnes cagoulées et vêtues de noir ont affronté les forces de l\'ordre ou joué au « chat et à la souris » avec elles.',
+        'Le ministère de l\'Intérieur et le Premier ministre ont attribué les violences à une « ultragauche » organisée. Jean-Luc Mélenchon a appelé à ne pas participer aux pillages.',
+        'Le président du RN, Jordan Bardella, les a qualifiés de « professionnels du chaos ».',
+      ],
+      voices: [],
+      q: 'Quelle histoire avez-vous prêtée à des gens dont vous ne voyez pas le visage ? D\'où venait cette histoire ?' },
+    crs: { name: 'La ligne de CRS',
+      facts: [
+        'Dos à la statue, des manifestants tirent des mortiers d\'artifice vers les forces de l\'ordre, qui répondent par des grenades lacrymogènes. Les tirs se multiplient et gagnent toute la place.',
+        '150 policiers et gendarmes blessés (Premier ministre). Le syndicat UNSA Police dit que les agents ont été « utilisés comme des punching-balls ».',
+        'Amnesty a jugé l\'usage de la force « disproportionné ». HRW a signalé des blessures graves chez des enfants, et le Haut-Commissariat de l\'ONU aux droits de l\'homme a appelé à la désescalade.',
+        'Laurent Nuñez a estimé la réponse proportionnée dans presque tous les cas. L\'IGPN enquête sur la main perdue par un adolescent de 17 ans à Saint-Étienne.',
+      ],
+      voices: [
+        ['CRS, 34 ans, originaire de Normandie', 'De l\'autre côté de mon bouclier, il y a des gamins de l\'âge de ma fille. Certains soirs, je rentre et je ne sais pas comment en parler.'],
+        ['Secouriste bénévole, 25 ans, étudiant en médecine', 'Aujourd\'hui j\'ai soigné des blessés des deux côtés. Le sang avait la même couleur.'],
+      ],
+      q: 'L\'ordre ou la liberté de manifester. Si vous ne pouviez protéger que l\'un des deux, lequel ? Existe-t-il un moyen de ne pas choisir ?' },
+    gaz: { name: 'Nuage lacrymogène',
+      facts: [
+        'À 12 h 20, avant le départ prévu à 14 h, l\'Orchestre du Nouveau Monde qui répétait place de la République a été gazé.',
+        'À 23 h 22, place de la Madeleine, des touristes pris dans les gaz et les jets de pierres ont fui en tirant leurs valises.',
+      ],
+      voices: [
+        ['Violoncelliste, 27 ans', 'On était au milieu d\'un morceau. Je ne pouvais plus ouvrir les yeux, je me suis assise en serrant mon instrument.'],
+      ],
+      q: 'Il suffit que le vent tourne pour que le spectateur devienne acteur. Où vous tenez-vous en ce moment ?' },
+    pompiers: { name: 'Sapeurs-pompiers',
+      facts: [
+        'À Limoges, l\'hôtel de ville de 143 ans a été incendié et son campanile s\'est effondré. À Lyon, l\'office de tourisme a brûlé.',
+        'Des pompiers ont aussi été vus parmi les manifestants ce jour-là.',
+      ],
+      voices: [
+        ['Pompier, 41 ans, parents venus du Portugal', 'À midi j\'ai défilé contre les suppressions de postes. La nuit, j\'ai éteint des feux dans la même rue. Les deux fois, je pensais le faire pour cette ville.'],
+      ],
+      q: 'Une même personne peut être, le même jour, « celle qui proteste » et « celle qui protège ». Y a-t-il ces deux personnes en vous ?' },
+    lycee: { name: 'Le lycée fermé',
+      facts: [
+        'Le mouvement est parti fin septembre du lycée Saint-Exupéry de Créteil, puis s\'est étendu en Seine-Saint-Denis et dans le Val-de-Marne.',
+        'Le 1er octobre, le ministère de l\'Intérieur comptait 1 027 lycées touchés et 222 bloqués. Selon le ministre de l\'Éducation, 24 établissements ont été « incendiés ou saccagés » (5 octobre) et 65 personnels blessés, dont 40 chefs d\'établissement (2 octobre).',
+      ],
+      voices: [
+        ['Proviseur, 56 ans', 'Je suis d\'accord avec 90 % de leurs revendications. Et ils ont cassé mon portail. Les deux sont vrais.'],
+        ['Mère d\'élève, 47 ans, d\'origine algérienne, pharmacienne', 'J\'ai dit à ma fille de ne pas y aller. Elle m\'a demandé : « Toi, quand tu étais jeune, tu te taisais ? » Je n\'ai pas su répondre.'],
+      ],
+      q: 'Quand des enfants cassent ce que les adultes n\'ont jamais réparé, à qui parlez-vous en premier ?' },
+    livreur: { name: 'Le livreur à vélo',
+      facts: [
+        'Même un soir où les magasins sont fermés et les rues bloquées, les commandes continuent d\'arriver.',
+      ],
+      voices: [
+        ['Livreur, 24 ans, originaire de Guinée, titre de séjour en cours d\'examen', 'Je ne peux pas manifester. Si je suis interpellé, mes papiers, c\'est fini. Mais la hausse des prix, je la sens aussi.'],
+      ],
+      q: 'Certains peuvent élever la voix, d\'autres non. Où va la voix de ceux qui ne sont pas sur cette place ?' },
+    giletjaune: { name: 'L\'homme au gilet jaune',
+      facts: [
+        'D\'anciens gilets jaunes se sont joints au 17 octobre contre le prix des carburants. Le 7 octobre, Sébastien Lecornu avait annoncé le déblocage de 10 millions de barils de réserves stratégiques de gazole.',
+        'Le coût d\'emprunt de l\'État est au plus haut depuis plus de 20 ans. Selon des chercheurs, la dette et le déficit limitent la capacité à répondre aux revendications.',
+      ],
+      voices: [
+        ['Magasinier, 52 ans, d\'un village de la Somme', '60 km pour aller au travail. Pas de bus. À Paris on me dit d\'abandonner ma voiture. L\'an prochain, je voterai RN. Ce sont les seuls qui m\'ont écouté.'],
+      ],
+      q: 'Comprenez-vous son vote ? Comprendre, est-ce la même chose qu\'approuver ?' },
+    affiche: { name: 'Affiches électorales',
+      facts: [
+        'La présidentielle est dans environ six mois. En fin de mandat d\'Emmanuel Macron, l\'arrivée au pouvoir du RN est envisagée.',
+        'Fin janvier 2026, le garde des Sceaux Gérald Darmanin a réclamé un moratoire de trois ans sur l\'immigration légale ; près de six Français sur dix y étaient favorables selon un sondage.',
+        'Dans un sondage, environ 70 % estiment qu\'« il y a trop d\'immigrés en France ». Le RN est le parti jugé le plus crédible sur l\'immigration (46 %).',
+        'Après le 17 octobre, le vice-président américain JD Vance a publié, sur des images de l\'incendie de l\'hôtel de ville de Limoges : « Les progressistes occidentaux ont importé le tiers-monde en France ».',
+        'En France, le traitement de données personnelles sur l\'origine ethnique ou raciale est en principe interdit. Il n\'existe aucune statistique officielle sur l\'origine des personnes interpellées : aucune explication ne peut être confirmée ni réfutée par les données.',
+        'Selon une enquête Ifop (septembre 2026), 46 % des musulmans interrogés envisageraient de quitter la France si Marine Le Pen était élue (21 % de l\'ensemble).',
+      ],
+      voices: [
+        ['Couple de retraités, 78 ans tous les deux, 10e', 'On ne sort plus le soir. On ne pense pas que tous les immigrés sont mauvais. Seulement, personne ne prend cette peur au sérieux.'],
+        ['Salarié, 35 ans, né à Lyon, parents tunisiens', 'Je suis né ici. Pourtant, à chaque élection, on me demande si je suis prêt à partir. Je n\'ai nulle part où « rentrer ».'],
+      ],
+      q: 'Où passe la frontière entre « inquiétude » et « exclusion » ? Avez-vous entendu les mêmes mots lors des élections de votre pays ?' },
+    telephone: { name: 'Un écran de téléphone',
+      facts: [
+        'L\'appel du 17 octobre est parti de TikTok en septembre, lancé par un créateur se faisant appeler « V2 », sans affiliation politique établie. Des cartes collaboratives indiquaient les points de rendez-vous et les positions des forces de l\'ordre.',
+        'Le 7 octobre, la France a convoqué l\'ambassadeur d\'Iran pour désinformation sur les manifestations.',
+        'Matignon a parlé d\'une « manœuvre organisée par La France insoumise et ses relais d\'ultragauche » ; les manifestants ont parlé d\'un mouvement spontané.',
+      ],
+      voices: [],
+      q: 'Comme tout ce qui défile sur cet écran, les informations de ce jeu ont été choisies par quelqu\'un. Qu\'avez-vous vérifié, et qu\'avez-vous cru sans vérifier ?' },
+    touriste: { name: 'Une voyageuse étrangère',
+      facts: [
+        'L\'ambassade des États-Unis, entre autres, conseillait aux voyageurs d\'éviter les lieux de manifestation.',
+      ],
+      voices: [
+        ['Étudiante en master, 26 ans, en échange à Paris', 'Chez moi, les infos ont juste dit « émeutes ». Ici, ce mot ne suffit pas. Et je me souviens que mon pays aussi commence à se diviser sur les étrangers et les prix.'],
+      ],
+      q: 'Regardez-vous cette place en touriste, ou comme quelque chose qui pourrait un jour arriver dans votre ville ?' },
+    fanfare: { name: 'La fanfare',
+      facts: [
+        'Face au Monument à la République, une fanfare accompagnait de nombreux manifestants. Les chants réclamaient la démission d\'Emmanuel Macron et visaient aussi l\'extrême droite.',
+        'Le cortège est parti vers 14 h pour rejoindre la place de Clichy (3,6 km) par le boulevard de Magenta, la gare du Nord et Barbès. Plus loin, de la techno, et des ados qui dansaient près des enceintes.',
+      ],
+      voices: [
+        ['Une lycéenne (à des touristes irlandais)', 'C\'est pas contre, c\'est pour. Pour un avenir. Un avenir meilleur.'],
+        ['Marie-Thérèse, 78 ans, retraitée', 'À leur âge, j\'ai fait Mai-68, j\'ai bloqué mon école d\'assistantes sociales.'],
+      ],
+      q: 'Musique et gaz lacrymogène sur la même place. Quel son allez-vous garder en mémoire ?' },
+    filtrage: { name: 'Filtrage à l\'entrée',
+      facts: [
+        'Aux entrées, les gendarmes fouillent les sacs et confisquent tout objet jugé dangereux. Invoquant un arrêté préfectoral, ils refusent les masques, même chirurgicaux, et le sérum physiologique.',
+        'Les policiers vérifient aussi les messages des pancartes. Une trentaine de lycéens surgissent de la rue René-Boulanger, sous les applaudissements.',
+      ],
+      voices: [
+        ['Un gendarme à l\'entrée', 'Les masques, c\'est niet !'],
+        ['Gendarme, 29 ans, venu d\'un escadron de province', 'Un objet confisqué ici, c\'est un blessé de moins plus tard. C\'est ce que je crois. Je sais que c\'est un métier qu\'on déteste.'],
+      ],
+      q: 'Quand on fouille vos affaires pour votre sécurité, jusqu\'où êtes-vous prêt à l\'accepter ?' },
+    pancarte1961: { name: 'Pancarte « 17 octobre 1961 »',
+      facts: [
+        'Lina, 21 ans, étudiante qui veut devenir professeure des écoles, brandit une pancarte en référence au 17 octobre 1961.',
+        'Le 17 octobre 1961, une manifestation d\'Algériens à Paris contre un couvre-feu qui ne visait qu\'eux a été réprimée par la police. Les estimations du nombre de morts varient fortement selon les sources, de 7 à plus de 200.',
+        'En 2012, François Hollande a « reconnu avec lucidité » cette « sanglante répression ». La manifestation de 2026 tombait le même jour, 65 ans plus tard.',
+      ],
+      voices: [
+        ['Lina, 21 ans, étudiante en sciences de l\'éducation (sa pancarte)', 'Ils ont noyé nos ancêtres, pas nos mémoires !'],
+        ['Lina', 'Ça bouge pas, donc il faut employer les grands moyens.'],
+        ['Employé retraité, 69 ans, 12e', 'Mêler une blessure d\'il y a 65 ans à la vie chère d\'aujourd\'hui brouille le propos, je trouve. Mais je ne dis pas qu\'il faut oublier.'],
+      ],
+      q: 'Des personnes de générations et d\'origines différentes donnent à une même date des sens différents. Votre pays a-t-il de telles dates ?' },
+    medic: { name: 'Street medics',
+      facts: [
+        'Des bénévoles aident les manifestants aux yeux rougis par les gaz. Damien, 25 ans, diplômé en recherche d\'emploi, distribue une solution maison d\'eau et de Maalox.',
+      ],
+      voices: [
+        ['Un manifestant', 'Sérum phy ! Ne courez pas !'],
+        ['Damien, 25 ans', 'Je suis une sorte de street-medic amateur.'],
+      ],
+      q: 'Au cœur de l\'affrontement, certains soignent sans prendre parti. Où vous placeriez-vous ?' },
+    canon: { name: 'Canon à eau',
+      facts: [
+        'La police a utilisé gaz lacrymogènes et canons à eau pour repousser des personnes cagoulées et masquées qui lançaient des feux d\'artifice. Des pavés et d\'autres objets ont été jetés sur les agents.',
+        'Autour de la place, tirs de gaz, charges et canons à eau se sont succédé.',
+      ],
+      voices: [
+        ['Conducteur du canon à eau, 46 ans', 'D\'ici, je ne vois que de la fumée et des lumières. Je ne vois pas vraiment qui est au bout du jet.'],
+      ],
+      q: 'Repousser avec de l\'eau, repousser avec des mots. Où commence la « force » ?' },
+    velib: { name: 'Vélos incendiés',
+      facts: [
+        'Des journalistes de l\'AP ont vu une épaisse fumée noire s\'élever de voitures, de vélos et d\'autres véhicules, et des poubelles en feu.',
+        'Les personnes qui allument les feux dans cette œuvre sont des silhouettes composites sans visage, qui ne représentent aucune personne ni aucun groupe réels.',
+      ],
+      voices: [
+        ['Mécanicien de vélos en libre-service, 31 ans', 'On m\'appellera à six heures. Ces vélos n\'étaient à personne, et c\'est justement pour ça qu\'ils étaient à tout le monde.'],
+      ],
+      q: 'Quand on casse ce qui « n\'appartient à personne », qui est blessé ?' },
+    nettoyage: { name: 'Le matin, on nettoie',
+      facts: [
+        'Des passants ont aidé les services de propreté à nettoyer la place de la République.',
+        'Le maire de Paris a parlé de rues entières dévastées.',
+      ],
+      voices: [
+        ['Agent de propreté, 49 ans', 'Je ne demande pas ce qui s\'est passé la nuit. Une étudiante m\'a demandé un balai, ça m\'a un peu réconforté.'],
+        ['Étudiante, 20 ans', 'Hier je criais ici. Aujourd\'hui je balaie. Les deux, c\'est vraiment moi.'],
+      ],
+      q: 'Quand tout est cassé, qui nettoie ? Là où vous vivez, qui est-ce ?' },
+  },
+  reflection: [
+    'Pensez-vous que les écoles, les hôpitaux et les transports de votre ville seront les mêmes dans dix ans ?',
+    'Quand les prix augmentent, contre qui vous mettez-vous en colère en premier ?',
+    'Savez-vous d\'où vient votre voisin ? Avez-vous besoin de le savoir ?',
+    '« La violence, c\'est mal » et « personne ne nous écoute ». Quand les deux sont vrais, que faites-vous ?',
+    'Devant quelle voix vous êtes-vous arrêté le plus longtemps dans ce jeu ?',
+  ],
+};
