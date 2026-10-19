@@ -2621,7 +2621,7 @@ async function shareMoment() {
     document.body.insertAdjacentHTML('beforeend', '<div class="flash-shot"></div>'); setTimeout(() => document.querySelector('.flash-shot')?.remove(), 400);
     audio.blip();
     const blob = await makeCard(src);
-    const url = shareURL(), text = tx('shareText') + ' #France2026';
+    const url = shareURL(), text = tx('shareText') + ' #France #France2026 #indiegame #gamedev';
     const file = new File([blob], `france2026-${hhmm(T).replace(':', '')}.png`, { type: 'image/png' });
     // the share sheet is opened from its own button: by the time the card is drawn, the tap that started this has
     // expired on phones, so navigator.share would be refused and only the X link (which cannot carry an image) was left
