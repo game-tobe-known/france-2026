@@ -2568,7 +2568,8 @@ let shotCb = null;
 function grabFrame() { return new Promise(r => { shotCb = r; }); } // resolved right after the next render
 function shareURL() {
   const hh = String(Math.floor(T)).padStart(2, '0') + String(Math.floor((T % 1) * 60)).padStart(2, '0');
-  return location.href.split('#')[0] + '#' + (mode === 'watch' ? 'watch' : 'walk') + hh + LANG;
+  // ?v= changes the address X caches its link card under (bump it when the preview image changes)
+  return location.origin + location.pathname + '?v=2#' + (mode === 'watch' ? 'watch' : 'walk') + hh + LANG;
 }
 // break text into at most maxLines lines that fit maxW, shrinking the size until it does
 // (words for spaced scripts; for Chinese and Japanese, phrases ending in punctuation, then characters if a phrase is too long;
