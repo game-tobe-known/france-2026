@@ -26,6 +26,18 @@ window.RUMEUR = {
     nbc: { name: 'NBC News (AP) — Clashes and fires break out', url: 'https://www.nbcnews.com/world/europe/france-protests-rcna604019' },
     wiki1961: { name: 'Wikipédia (fr) — Massacre du 17 octobre 1961', url: 'https://fr.wikipedia.org/wiki/Massacre_du_17_octobre_1961' },
     spg: { name: 'S&P Global — France to release 10 million barrels of diesel', url: 'https://www.spglobal.com/energy/en/news-research/latest-news/refined-products/100826-france-to-release-10-million-barrels-of-diesel-from-emergency-reserves-lecornu' },
+    ap_kpbs: { name: 'AP (via KPBS) — Paris police report 855 arrests after violent clashes and looting', url: 'https://www.kpbs.org/news/international/2026/10/17/paris-police-report-855-arrests-after-violent-clashes-and-looting-during-protests' },
+    ap_pbs: { name: 'AP (via PBS) — Macron condemns those who "sought to bring down the Republic"', url: 'https://www.pbs.org/newshour/world/frances-macron-vows-to-hold-accountable-those-who-sought-to-bring-down-the-republic' },
+    ici_paris: { name: 'ICI — 110,000 marchers in Paris, "wildcat marches" and 195 arrests', url: 'https://www.ici.fr/ile-de-france/paris-75/paris/mobilisation-du-17-octobre-des-tensions-avant-le-depart-de-la-manifestation-place-de-la-republique-a-paris-8202537' },
+    actu17_live: { name: 'actu17 — Live: violence and looting across France', url: 'https://actu17.fr/faits-divers/en-direct-mobilisation-du-17-octobre-suivez-les-evenements-partout-en-france.html' },
+    actu17_gav: { name: 'actu17 — Paris: 855 arrested (prosecutor\'s figures)', url: 'https://actu17.fr/faits-divers/mobilisation-du-17-octobre-a-paris-720-interpelles-le-siege-de-cnews-et-la-prison-de-la-sante-vises.html' },
+    fi_bilan: { name: 'franceinfo — 1,200 arrested, according to Lecornu', url: 'https://www.franceinfo.fr/economie/greve/mobilisation-du-17-octobre-1-200-personnes-ont-ete-interpellees-selon-sebastien-lecornu-qui-deplore-des-degres-de-violence-inacceptables_8242513.html' },
+    euronews_shops: { name: 'Euronews — Businesses and shopkeepers pick up the pieces', url: 'https://www.euronews.com/2026/10/18/businesses-and-shopkeepers-pick-up-the-pieces-after-protests-in-france-spiral-into-looting' },
+    bi_shops: { name: 'Business Insider (via Yahoo) — "They\'d taken everything"', url: 'https://www.yahoo.com/news/world/articles/paris-business-owners-stock-riots-165831456.html' },
+    orange_limoges: { name: 'Orange / 6Medias — Limoges town hall ravaged by fire', url: 'https://actu.orange.fr/france/mobilisation-du-17-octobre-la-mairie-de-limoges-ravagee-par-les-flammes-un-symbole-de-la-ville-s-effondre-6medias-CNT000002t2u0Z.html' },
+    fi_limoges: { name: 'franceinfo — Fire ravages the town hall of Limoges', url: 'https://www.franceinfo.fr/economie/greve/video-un-incendie-ravage-l-hotel-de-ville-de-limoges-en-marge-de-la-mobilisation-du-17-octobre_8242054.html' },
+    dpa_vance: { name: 'dpa (via Yahoo) — Trump joins Vance in blaming immigration', url: 'https://www.yahoo.com/news/politics/articles/trump-joins-vance-blaming-immigration-154836809.html' },
+    afp_trump: { name: 'AFP (via LBC) — Trump says "France is burning"', url: 'https://www.lbcgroup.tv/news/world-news/963466/trump-says-france-is-burning-country-shattered-by-immigration-truth-so/en' },
   },
 
   // key figures (always name who published them)
@@ -50,10 +62,16 @@ window.RUMEUR = {
     { t: 19.68, label: '19:41', city: 'Paris 10e', text: 'Protesters force their way into the town hall, where about 100 people are at a breast-cancer event.', src: ['f24'] },
     { t: 19.98, label: '19:59', city: 'France', text: 'The interior minister reports about 400 arrests.', src: ['f24'] },
     { t: 21.0, label: '21:00', city: 'Paris 8e', text: 'A car is overturned on Rue Cambacérès, about 400 m from the Élysée.', src: ['f24'] },
-    { t: 21.73, label: '21:44', city: 'Limoges', text: 'The 143-year-old town hall is set on fire. According to the prefect, most of the building is lost.', src: ['f24', 'wiki_fr'] },
+    { t: 20.5, label: '~20:30', city: 'Limoges', text: 'The bell tower of the burning town hall collapses. The prefect says the building is "largely lost".', src: ['orange_limoges', 'fi_limoges'] },
     { t: 22.9, label: '22:54', city: 'Saint-Étienne', text: 'A 17-year-old loses a hand, apparently to a crowd-control grenade. The IGPN opens an inquiry.', src: ['f24', 'wiki_fr'] },
     { t: 23.37, label: '23:22', city: 'Paris 8e', text: 'Tourists are caught in tear gas and stone-throwing at Place de la Madeleine.', src: ['f24'] },
     { t: 23.8, label: '23:48', city: 'Prime Minister', text: 'Lecornu announces 1,200 arrests and 150 police officers injured.', src: ['f24'] },
+    // added later (the list is sorted by time when shown; translations follow this order)
+    { t: 16.0, label: '16:00', city: 'Paris', text: 'The prosecutor reports 195 arrests, including 13 minors. The march itself passes off without major incident, according to the prefecture.', src: ['ici_paris'] },
+    { t: 17.75, label: '~17:45', city: 'Limoges', text: 'Rioters break windows of the town hall, inaugurated in 1883 and a listed historic monument, and start a fire on the ground floor.', src: ['orange_limoges'] },
+    { t: 20.07, label: '20:04', city: 'Paris 10e', text: 'Dozens of shops on Boulevard Magenta have been looted during the afternoon.', src: ['actu17_live'] },
+    { t: 20.97, label: '20:58', city: 'Paris', text: 'Widespread looting on the Grands Boulevards and at Les Halles.', src: ['actu17_live'] },
+    { t: 23.2, label: '23:12', city: 'Paris 1er', text: 'The Burberry and Christian Dior shops on Rue Saint-Honoré are reported looted during the evening.', src: ['actu17_live'] },
   ],
 
   // things in the 3D scene that can be inspected
@@ -213,7 +231,7 @@ window.RUMEUR = {
         { text: 'About six months to the presidential election. At the end of Macron\'s time in office, the far-right RN could come to power.', src: ['aj', 'f24'] },
         { text: 'At the end of January 2026, Justice Minister Gérald Darmanin called for a three-year moratorium on legal migration; almost six in ten backed it in a poll.', src: ['unherd'] },
         { text: 'In one poll about 70% said "there are too many immigrants in France". The RN is the most trusted party on immigration (46%).', src: ['unherd'] },
-        { text: 'After 17 October, US Vice President JD Vance posted, over footage of the Limoges town hall fire, that "Western progressives imported the Third World into France".', src: ['fi_vance'] },
+        { text: 'After 17 October, US Vice President JD Vance posted, over footage of the Limoges town hall fire, that "Western liberals imported the third world into France". According to AP, French authorities and police have not linked immigrants to the rioting.', src: ['fi_vance', 'dpa_vance', 'ap_pbs'] },
         { text: 'French law prohibits, in principle, processing personal data on ethnic or racial origin. There are no official statistics on the origins of those arrested, so no explanation can be confirmed or refuted with data.', src: ['stat'] },
         { text: 'In an Ifop survey (Sept. 2026), 46% of Muslim respondents said they would consider emigrating if Le Pen were elected (21% of all respondents).', src: ['ifop'] },
       ],
@@ -326,6 +344,51 @@ window.RUMEUR = {
         { kind: 'composite', who: 'University student, 20', text: 'Yesterday I was shouting here. Today I\'m sweeping. Both are really me.' },
       ],
       question: 'After things break, who cleans up? Where you live, who is it?',
+    },
+    vitrine: {
+      code: 'OBJ-23', fr: 'Vitrine pillée', name: 'The looted shop window',
+      facts: [
+        { text: 'According to the prefecture, the march from République to Place de Clichy passed off without major incident. Clashes and violence took place on its margins.', src: ['ici_paris'] },
+        { text: 'Paris police said that later in the day large numbers of people arrived "whose sole aim was to steal and loot".', src: ['ap_kpbs'] },
+        { text: 'Dozens of shops on Boulevard Magenta, which starts at République, were looted in the afternoon. In the evening looting spread to the Grands Boulevards and Les Halles, and to Burberry and Dior on Rue Saint-Honoré.', src: ['actu17_live'] },
+        { text: 'Of the 557 people held in custody in Paris, 381 were adults, 151 minors and 25 of undetermined age (prosecutor). Receiving stolen goods was the most common ground, for more than 150 of them.', src: ['actu17_gav', 'fi_bilan'] },
+        { text: 'Who were they? The government blamed organised "ultra-left" groups, joined by people who came to loot. US President Trump and Vice President Vance blamed immigration. According to AP, French authorities and police have not linked immigrants to the rioting. No breakdown of those arrested by nationality has been published, and France does not collect statistics on ethnic origin.', src: ['wiki_fr', 'dpa_vance', 'ap_pbs', 'stat'] },
+        { text: 'The people who loot in this piece are faceless composite silhouettes, not depictions of any real person or group.', src: [] },
+      ],
+      voices: [
+        { kind: 'composite', who: 'Night-shift nurse, 37, lives above the shops', text: 'I watched from my window. Hoods, scarves, phones held up. I couldn\'t tell you who they were, and I notice that everyone on TV can.' },
+        { kind: 'composite', who: 'Student, 19, marched in the afternoon', text: 'We walked to Clichy and back without breaking anything. Tonight on the news there is just one word for all of us.' },
+      ],
+      question: 'Marchers, looters, onlookers: in the dark they look alike. What would you need to know before deciding who they are?',
+    },
+    commercant: {
+      code: 'PER-24', fr: 'Le commerçant', name: 'The shopkeeper',
+      facts: [
+        { text: 'Carrefour\'s chief executive said 50 of the group\'s shops were targeted, and spoke of "the 1,500 shops belonging to all the other retail chains".', src: ['euronews_shops'] },
+        { text: 'The mayor of Paris asked for an "emergency task force to support shopkeepers who have been victims of vandalism".', src: ['euronews_shops'] },
+        { text: 'This shopkeeper is a composite. The two quoted voices below are real people who spoke to the press.', src: [] },
+      ],
+      voices: [
+        { kind: 'quoted', who: 'Shop owner near République (to Brut)', text: 'I don\'t know how I\'ll get by or how I\'ll live with my family.', src: ['euronews_shops'] },
+        { kind: 'quoted', who: 'Owner of a gold-buying shop in Paris', text: 'They stole things. When I got back, they\'d taken everything.', src: ['bi_shops'] },
+        { kind: 'composite', who: 'Shoe-shop owner, 61', text: 'Everything I have is in this shop. I agree that prices are too high. I just don\'t understand why my window is the one that pays.' },
+      ],
+      question: 'Who should pay for this window: the people who broke it, the insurers, the state, or nobody?',
+    },
+    limoges: {
+      code: 'SIG-25', fr: 'La télé du café', name: 'The café TV',
+      facts: [
+        { text: 'In Limoges, around 17:45, rioters broke windows of the town hall and started a fire on the ground floor. Shortly before 19:00 the flames reached the roof; around 20:30 the bell tower collapsed.', src: ['orange_limoges'] },
+        { text: 'The main building was inaugurated in 1883. Its façades, roofs and monumental fountain are listed as historic monuments.', src: ['orange_limoges'] },
+        { text: 'The prefect said the town hall was "largely lost". At the time of the first reports the exact circumstances were not yet known.', src: ['fi_limoges', 'orange_limoges'] },
+        { text: 'US President Donald Trump posted "France is burning!" and blamed "the immigration of people from an entirely different world". Vice President JD Vance hoped France would "stop this madness before more of its landmarks burn".', src: ['afp_trump', 'dpa_vance'] },
+        { text: 'According to AP, French authorities and police have not linked immigrants to the rioting.', src: ['ap_pbs'] },
+      ],
+      voices: [
+        { kind: 'composite', who: 'Café owner, 50', text: 'I left the news on for the customers. For an hour nobody ordered anything. They just watched it burn.' },
+        { kind: 'composite', who: 'Customer, 66, grew up in Limoges', text: 'I got married in that building. Everyone here already knows who did it, and nobody actually knows yet.' },
+      ],
+      question: 'When a landmark burns, an explanation spreads faster than the facts. Which explanation reached you first, and from whom?',
     },
   },
 
