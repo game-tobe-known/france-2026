@@ -466,8 +466,8 @@ a{color:inherit}
 <script>addEventListener('error', e => { document.documentElement.dataset.err = (document.documentElement.dataset.err || '') + ' | ' + e.message; });</script>
 <!-- bump ?v= on both lines whenever data*.js or makers.js change: the language files take the same version,
      so a cached old file can never mix with a new page (GitHub Pages caches for 10 minutes) -->
-<script src="data.js?v=2026-10-19.6"></script>
-<script src="makers.js?v=2026-10-19.6"></script>
+<script src="data.js?v=2026-10-19.7"></script>
+<script src="makers.js?v=2026-10-19.7"></script>
 <script>
 // language comes first: pick (or recall) it, then load only that language's fonts and text
 (function () {
@@ -537,7 +537,7 @@ await window.__langData;
 const I18N = window.RUMEUR_I18N?.[LANG] || {};
 const TX = {
   en: {
-    share: 'Share', shareTitle: 'Share this moment', shareX: 'Post on X', saveImg: 'Save image', shareImg: 'Share image', copyLink: 'Copy link', copied: 'Copied', shareHint: 'Save the image, then attach it to your post on X. The link opens the square at this time.', shareHintSheet: '“Share image” opens your device’s share menu: choose X to post with the image attached. The link opens the square at this time.',
+    share: 'Share', shareTitle: 'Share this moment', shareX: 'Post on X', saveImg: 'Save image', shareImg: 'Share image', copyLink: 'Copy link', copied: 'Copied', shareHint: 'Save the image, then attach it to your post on X. The link opens the square at this time.', shareHintSheet: '“Share image” opens your device’s share menu: choose X to post with the image attached. The text and link are copied at the same time, so paste them into your post.',
     shareText: 'France 2026 — a game rebuilt from news reports. What is happening in the world right now? Take a moment to look.',
     shareMade: 'A game · rebuilt from news reports', shareCall: 'What is happening in the world right now? Take a moment to look.',
     pTitle: 'A reason to look',
@@ -572,7 +572,7 @@ const TX = {
     webgl: 'This device cannot run WebGL, so the 3D scene cannot be shown.<br>Please try another browser or device.',
   },
   fr: {
-    share: 'Partager', shareTitle: 'Partager ce moment', shareX: 'Publier sur X', saveImg: 'Enregistrer l’image', shareImg: 'Partager l’image', copyLink: 'Copier le lien', copied: 'Copié', shareHint: 'Enregistrez l’image, puis joignez-la à votre post sur X. Le lien ouvre la place à cette heure-là.', shareHintSheet: '« Partager l’image » ouvre le menu de partage de votre appareil : choisissez X pour publier avec l’image jointe. Le lien ouvre la place à cette heure-là.',
+    share: 'Partager', shareTitle: 'Partager ce moment', shareX: 'Publier sur X', saveImg: 'Enregistrer l’image', shareImg: 'Partager l’image', copyLink: 'Copier le lien', copied: 'Copié', shareHint: 'Enregistrez l’image, puis joignez-la à votre post sur X. Le lien ouvre la place à cette heure-là.', shareHintSheet: '« Partager l’image » ouvre le menu de partage de votre appareil : choisissez X pour publier avec l’image jointe. Le texte et le lien sont copiés en même temps : collez-les dans votre post.',
     shareText: 'France 2026 — un jeu reconstitué d’après la presse. Que se passe-t-il dans le monde en ce moment ? Prenez le temps de regarder.',
     shareMade: 'Un jeu · reconstitué d’après la presse', shareCall: 'Que se passe-t-il dans le monde en ce moment ? Prenez le temps de regarder.',
     pTitle: 'Une raison de regarder',
@@ -2628,9 +2628,11 @@ async function shareMoment() {
     let canFile = false; try { canFile = !!(navigator.canShare && navigator.canShare({ files: [file] })); } catch (e) {}
     $('shFile').classList.toggle('hide', !canFile); $('shX').classList.toggle('primary', !canFile);
     $('shHint').dataset.i18n = canFile ? 'shareHintSheet' : 'shareHint'; $('shHint').innerHTML = tx($('shHint').dataset.i18n);
+    // the image goes out alone: given an image and text together, X on Android keeps the text and drops the image.
+    // the text and link go to the clipboard in the same tap, to paste into the post
     $('shFile').onclick = async () => {
-      try { await navigator.share({ files: [file], text: `${text}\n${url}` }); }
-      catch (e) { if (!e || e.name !== 'AbortError') try { await navigator.share({ files: [file] }); } catch (_) {} }
+      try { navigator.clipboard?.writeText(`${text}\n${url}`).catch(() => {}); } catch (e) {}
+      try { await navigator.share({ files: [file] }); } catch (e) {}
     };
     // X link (text and link only; the image is attached by hand) + save + copy link
     if (shareBlobURL) URL.revokeObjectURL(shareBlobURL);
