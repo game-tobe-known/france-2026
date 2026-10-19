@@ -8,13 +8,14 @@ facts with their sources, the voices of people who were there, and a question wi
 
 - Runs in the browser, on phones and computers. No install, no account, no tracking.
 - English, Français, Español, Deutsch, 日本語, 简体中文, 한국어, العربية.
-- A reconstruction based on news reports. Every figure is a faceless silhouette. Most citizen voices are
+- A reconstruction based on news reports. Every person is a faceless silhouette. Most citizen voices are
   fictional people built from reporting and are always labelled as such; quoted words link to their source.
 
 ## Help wanted
 
 This game is a beginning, not a finished work. It needs people who know France, who were there,
-and people who can make it better. **Copying it is welcome.** Read [CONTRIBUTING.md](CONTRIBUTING.md).
+and people who can make it better. **Copy it and improve it in your own repository**: this one does not take
+pull requests or issues. Read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Everyone who has carried the game on is listed in [makers.js](makers.js) and inside the game (ⓘ → Makers).
 
@@ -46,4 +47,5 @@ C'est une reconstitution d'après la presse. Toutes les silhouettes sont anonyme
 des personnages fictifs construits à partir de reportages, toujours signalés comme tels.
 
 Ce jeu n'est pas fini : il a besoin de gens qui connaissent la France, qui y étaient, et de gens qui savent l'améliorer.
-**Le copier est bienvenu.** Lisez [CONTRIBUTING.md](CONTRIBUTING.md).
+**Copiez-le et améliorez-le dans votre propre dépôt** : celui-ci n'accepte ni pull requests ni issues.
+Lisez [CONTRIBUTING.md](CONTRIBUTING.md).
