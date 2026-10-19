@@ -303,6 +303,7 @@ a{color:inherit}
 #shImg{width:100%;max-height:58svh;object-fit:contain;border:1px solid var(--line);background:#000}
 .sh-row{display:flex;gap:8px;flex-wrap:wrap}
 .sh-row .choice{flex:1;min-width:120px;text-decoration:none;color:inherit;align-items:center}
+.sh-row .choice.hide{display:none}
 .panel .hbtns{display:flex;gap:6px}
 .flash-shot{position:fixed;inset:0;background:#fff;z-index:12;pointer-events:none;animation:shot .35s ease-out forwards}
 @keyframes shot{from{opacity:.55}to{opacity:0}}
@@ -448,11 +449,12 @@ a{color:inherit}
     <div class="sh-head"><span class="eyebrow" data-i18n="shareTitle"></span><button class="sh-x glass" id="shClose" data-i18n-aria="aClose">✕</button></div>
     <img id="shImg" alt="">
     <div class="sh-row">
+      <button class="choice primary hide" id="shFile"><b data-i18n="shareImg"></b></button>
       <a class="choice primary" id="shX" target="_blank" rel="noopener"><b data-i18n="shareX"></b></a>
       <a class="choice" id="shSave"><b data-i18n="saveImg"></b></a>
       <button class="choice" id="shCopy"><b data-i18n="copyLink"></b></button>
     </div>
-    <p class="fine" data-i18n="shareHint"></p>
+    <p class="fine" id="shHint" data-i18n="shareHint"></p>
   </div>
 </div>
 <div class="ov reflect hide" id="reflect" aria-hidden="true">
@@ -462,8 +464,8 @@ a{color:inherit}
 <script>addEventListener('error', e => { document.documentElement.dataset.err = (document.documentElement.dataset.err || '') + ' | ' + e.message; });</script>
 <!-- bump ?v= on both lines whenever data*.js or makers.js change: the language files take the same version,
      so a cached old file can never mix with a new page (GitHub Pages caches for 10 minutes) -->
-<script src="data.js?v=2026-10-19.3"></script>
-<script src="makers.js?v=2026-10-19.3"></script>
+<script src="data.js?v=2026-10-19.4"></script>
+<script src="makers.js?v=2026-10-19.4"></script>
 <script>
 // language comes first: pick (or recall) it, then load only that language's fonts and text
 (function () {
@@ -533,7 +535,7 @@ await window.__langData;
 const I18N = window.RUMEUR_I18N?.[LANG] || {};
 const TX = {
   en: {
-    share: 'Share', shareTitle: 'Share this moment', shareX: 'Post on X', saveImg: 'Save image', copyLink: 'Copy link', copied: 'Copied', shareHint: 'Save the image, then attach it to your post on X. The link opens the square at this time.',
+    share: 'Share', shareTitle: 'Share this moment', shareX: 'Post on X', saveImg: 'Save image', shareImg: 'Share image', copyLink: 'Copy link', copied: 'Copied', shareHint: 'Save the image, then attach it to your post on X. The link opens the square at this time.', shareHintSheet: '“Share image” opens your device’s share menu: choose X to post with the image attached. The link opens the square at this time.',
     shareText: 'France 2026 — a game rebuilt from news reports. What is happening in the world right now? Take a moment to look.',
     shareMade: 'A game · rebuilt from news reports', shareCall: 'What is happening in the world right now? Take a moment to look.',
     pTitle: 'A reason to look',
@@ -569,7 +571,7 @@ const TX = {
     webgl: 'This device cannot run WebGL, so the 3D scene cannot be shown.<br>Please try another browser or device.',
   },
   fr: {
-    share: 'Partager', shareTitle: 'Partager ce moment', shareX: 'Publier sur X', saveImg: 'Enregistrer l’image', copyLink: 'Copier le lien', copied: 'Copié', shareHint: 'Enregistrez l’image, puis joignez-la à votre post sur X. Le lien ouvre la place à cette heure-là.',
+    share: 'Partager', shareTitle: 'Partager ce moment', shareX: 'Publier sur X', saveImg: 'Enregistrer l’image', shareImg: 'Partager l’image', copyLink: 'Copier le lien', copied: 'Copié', shareHint: 'Enregistrez l’image, puis joignez-la à votre post sur X. Le lien ouvre la place à cette heure-là.', shareHintSheet: '« Partager l’image » ouvre le menu de partage de votre appareil : choisissez X pour publier avec l’image jointe. Le lien ouvre la place à cette heure-là.',
     shareText: 'France 2026 — un jeu reconstitué d’après la presse. Que se passe-t-il dans le monde en ce moment ? Prenez le temps de regarder.',
     shareMade: 'Un jeu · reconstitué d’après la presse', shareCall: 'Que se passe-t-il dans le monde en ce moment ? Prenez le temps de regarder.',
     pTitle: 'Une raison de regarder',
@@ -2496,10 +2498,16 @@ async function shareMoment() {
     const blob = await makeCard(src);
     const url = shareURL(), text = tx('shareText') + ' #France2026';
     const file = new File([blob], `france2026-${hhmm(T).replace(':', '')}.png`, { type: 'image/png' });
-    try {
-      if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text: `${text}\n${url}` }); return; }
-    } catch (e) { if (e && e.name === 'AbortError') return; }
-    // fallback: preview + post on X (the image must be attached by hand) + save + copy link
+    // the share sheet is opened from its own button: by the time the card is drawn, the tap that started this has
+    // expired on phones, so navigator.share would be refused and only the X link (which cannot carry an image) was left
+    let canFile = false; try { canFile = !!(navigator.canShare && navigator.canShare({ files: [file] })); } catch (e) {}
+    $('shFile').classList.toggle('hide', !canFile); $('shX').classList.toggle('primary', !canFile);
+    $('shHint').dataset.i18n = canFile ? 'shareHintSheet' : 'shareHint'; $('shHint').innerHTML = tx($('shHint').dataset.i18n);
+    $('shFile').onclick = async () => {
+      try { await navigator.share({ files: [file], text: `${text}\n${url}` }); }
+      catch (e) { if (!e || e.name !== 'AbortError') try { await navigator.share({ files: [file] }); } catch (_) {} }
+    };
+    // X link (text and link only; the image is attached by hand) + save + copy link
     if (shareBlobURL) URL.revokeObjectURL(shareBlobURL);
     shareBlobURL = URL.createObjectURL(blob);
     $('shImg').src = shareBlobURL;
